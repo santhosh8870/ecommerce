@@ -43,7 +43,7 @@ export default function Cart({cartItems, setCartItems})
     }
 
     async function placeOrder(){
-        fetch("http://localhost:8000/api/v1/order",{
+        fetch(process.env.BACKEND_URL+"order",{
             method : "POST",
             headers : {"Content-type" : "application/json"},
             body : JSON.stringify(cartItems)
