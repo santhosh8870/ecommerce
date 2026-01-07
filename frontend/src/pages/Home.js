@@ -6,7 +6,7 @@ function Home(){
     const [products, setProducts] = useState([])
 
     useEffect(()=>{
-        fetch("http://localhost:8000/api/v1/products").then((res)=> res.json()).then((res)=> setProducts(res["products"]))
+        fetch(process.env.BACKEND_URL+"products").then((res)=> res.json()).then((res)=> setProducts(res["products"]))
     },[])
 
     return(
