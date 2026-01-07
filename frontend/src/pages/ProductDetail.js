@@ -8,7 +8,7 @@ const ProductDetail = ({cartItems, setCartItems}) => {
   const [qty, setQty] = useState(1)
 
     useEffect(()=>{
-        fetch("http://localhost:8000/api/v1/product/"+id).then((res)=> res.json()).then((res)=> setProduct(res["product"]))
+        fetch(process.env.BACKEND_URL+"product/"+id).then((res)=> res.json()).then((res)=> setProduct(res["product"]))
     },[id])
 
     function addCart(){
