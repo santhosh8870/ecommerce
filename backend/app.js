@@ -13,7 +13,7 @@ app.use(express.json())
 app.use(cors({
   origin: [
     "http://localhost:3000",
-    "https://finall-project-3.onrender.com"
+    "https://ecommerce-v00d.onrender.com/"
   ],
   credentials: true
 }));
