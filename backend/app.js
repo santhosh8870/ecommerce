@@ -20,7 +20,7 @@ app.use(cors({
 app.use("/api/v1",orders)
 app.use("/api/v1",products)
 app.use("/api/v1",users)
-app.use("/",(req, res)=>{
+app.use("/test",(req, res)=>{
    res.send("<h1>Welcome to E-Commerce API</h1>")
 })
 app.listen(process.env.PORT, ()=>{
