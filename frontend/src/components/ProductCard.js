@@ -1,20 +1,27 @@
-import { Link } from "react-router-dom"
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-const ProductCard = ({product})=>{
-    return(
-        <div className="col-sm-12 col-md-6 col-lg-3 my-3">
-            <div className="card p-3 rounded">
-                <img src={product.images[0].image} alt="..." className="card-img-top mx-auto" />
-                <div className="card-body d-flex flex-column">
-                    <Link to={"/product/"+product._id}>
-                        <h5 className="card-title">{product.name}</h5>
-                    </Link>
+const ProductCard = ({product}) => {
+  return <div className="col-sm-12 col-md-6 col-lg-3 my-3">
+                <div className="card p-3 rounded">
+                    <img className="card-img-top mx-auto" src={product.images[0].image} alt='...'/>
+                    <div className="card-body d-flex flex-column">
+                    <h5 className="card-title">
+                        <Link to={"/product/"+product._id}>{product.name}</Link>
+                    </h5>
+                    <div className="ratings mt-auto">
+                        <i className="fa fa-star"></i>
+                        <i className="fa fa-star"></i>
+                        <i className="fa fa-star"></i>
+                        <i className="fa fa-star-half-o"></i>
+                        <i className="fa fa-star-o"></i>
+                        <span id="no_of_reviews">(5 Reviews)</span>
+                    </div>
                     <p className="card-text">{product.price}</p>
-                    <Link to={"/product/"+product._id} id="view_btn" className="btn btn-block">View-Details</Link>
-                </div> 
-            </div>
-        </div>
-    )
+                    <Link to={"/product/"+product._id} id="view_btn" className="btn btn-block">View Details</Link>
+                    </div>
+                </div>
+                </div>
 }
 
-export default ProductCard;
+export default ProductCard

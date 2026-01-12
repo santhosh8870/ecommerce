@@ -10,7 +10,13 @@ const cors = require("cors")
 const connectDatabase = require("./config/connectDatabase")
 connectDatabase()
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+  origin: [
+    "http://localhost:3000",
+    "https://finall-project-3.onrender.com"
+  ],
+  credentials: true
+}));
 app.use("/api/v1",orders)
 app.use("/api/v1",products)
 app.use("/api/v1",users)
